@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 3c58da25cd594b1a8866baf0b6892b8e
+timeCreated: 1750067677
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/StateMachine/StateMachineFactory.cs
+  uploadId: 785286

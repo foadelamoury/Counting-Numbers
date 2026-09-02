@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: fc4272845052408189481f96cf3db1e7
+timeCreated: 1749046934
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/PhysicalModules/Modules/DashModule.cs
+  uploadId: 785286

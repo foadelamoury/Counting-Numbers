@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8dcb1b1871f0a4c3fa5cd365a548eeb3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/StateMachine/StateMachine.cs
+  uploadId: 785286

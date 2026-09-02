@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a42ded2f72bd4414eafd136c6745f934
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/Utilites/Timer.cs
+  uploadId: 785286

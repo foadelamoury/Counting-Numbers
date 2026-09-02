@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 01b97e2da19b4a7c8feec2677616bd2d
+timeCreated: 1749549942
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/Systems/PhysicsHandler2D.cs
+  uploadId: 785286

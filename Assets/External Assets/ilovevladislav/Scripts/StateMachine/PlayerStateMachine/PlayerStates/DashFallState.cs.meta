@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: db34f1c407a64e5a890cf591eec90952
+timeCreated: 1751880383
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/StateMachine/PlayerStateMachine/PlayerStates/DashFallState.cs
+  uploadId: 785286

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: f2afac3327464d118af31e46c3460dbe
+timeCreated: 1749046910
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/PhysicalModules/Modules/JumpModule.cs
+  uploadId: 785286

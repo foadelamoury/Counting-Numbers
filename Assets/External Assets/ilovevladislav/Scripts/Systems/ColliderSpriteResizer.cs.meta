@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c903217e4ba84737932ef664479f9209
+timeCreated: 1749992079
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/Systems/ColliderSpriteResizer.cs
+  uploadId: 785286

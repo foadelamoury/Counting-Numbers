@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 780106dcd6c08476d99b24bb5957674f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/StateMachine/PlayerStateMachine/PlayerStates/RunState.cs
+  uploadId: 785286

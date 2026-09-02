@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 3a9f1b9bb5304b399c2808e7b26de70a
+timeCreated: 1749733200
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/Player/PlayerTimerRegistry.cs
+  uploadId: 785286

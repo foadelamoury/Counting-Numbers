@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: d4c1e7c71c5345dfa573a247cd1f8e05
+timeCreated: 1747776604
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/StateMachine/PlayerStateMachine/PlayerStates/IdleCrouchState.cs
+  uploadId: 785286

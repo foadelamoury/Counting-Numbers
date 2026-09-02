@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 995e1a0dca6f420a9a35f17bdcd5d7ef
+timeCreated: 1751573948
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/Utilites/ResetZone.cs
+  uploadId: 785286

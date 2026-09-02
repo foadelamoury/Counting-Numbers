@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: df02dcaf1298484bb6351a7792115542
+timeCreated: 1749138889
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/StateMachine/PlayerStateMachine/PlayerStates/WallJumpState.cs
+  uploadId: 785286

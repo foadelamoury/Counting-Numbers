@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 45e0051ac96644bca0239511c9435a17
+timeCreated: 1749046940
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/PhysicalModules/Modules/WallSlideModule.cs
+  uploadId: 785286

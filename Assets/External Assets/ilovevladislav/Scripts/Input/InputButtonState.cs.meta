@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 8ba2a5fad19a4e1b9513b943d1bc5003
+timeCreated: 1749389723
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/Input/InputButtonState.cs
+  uploadId: 785286

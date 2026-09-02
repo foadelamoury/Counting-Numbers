@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b2885b9bedea463a946bd2e7404b7656
+timeCreated: 1749046950
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/PhysicalModules/Modules/CrouchRollModule.cs
+  uploadId: 785286

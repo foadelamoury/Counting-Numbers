@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 6dfd82bb7ee54735b9c16d94793714ea
+timeCreated: 1750696390
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/Input/MovementLogic.cs
+  uploadId: 785286

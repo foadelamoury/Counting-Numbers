@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: a2c1cb35cce944f7b3a0a23d4e74270e
+timeCreated: 1749046916
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/PhysicalModules/Modules/FallModule.cs
+  uploadId: 785286

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d8591918f3fac284c9872596558d5edb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Prefab/GridForScene.prefab
+  uploadId: 785286

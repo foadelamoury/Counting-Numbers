@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 86bbd8f806d0f2c46bb8cc44cbda1c9f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Art/Animations/Player/AnimationClips/Land.anim
+  uploadId: 785286

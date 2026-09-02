@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: e078d892ff114895b8bc8aa4b0b6169e
+timeCreated: 1747934655
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/StateMachine/PlayerStateMachine/PlayerStates/RunFallState.cs
+  uploadId: 785286

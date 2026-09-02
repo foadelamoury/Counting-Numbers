@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bcda324fa4d7ee6408699ad2525531ae
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Art/Sprites/PrototypBlocks/PrototypeTilePalette.prefab
+  uploadId: 785286

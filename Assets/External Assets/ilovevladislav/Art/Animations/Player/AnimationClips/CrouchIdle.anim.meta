@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0b1cac09ce3a81943af433fde094c7f2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Art/Animations/Player/AnimationClips/CrouchIdle.anim
+  uploadId: 785286

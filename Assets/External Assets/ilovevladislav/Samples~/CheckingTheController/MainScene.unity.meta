@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 85384e9ba3853d34897c4f4e922a98da
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Samples~/CheckingTheController/MainScene.unity
+  uploadId: 785286

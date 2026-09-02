@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b5d726b81c674c9686a2962d1d32fe45
+timeCreated: 1747924629
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328322
+  packageName: Flexible 2D Character Controller
+  packageVersion: 1.0.0
+  assetPath: Assets/ilovevladislav/Scripts/StateMachine/PlayerStateMachine/PlayerStates/RunJumpState.cs
+  uploadId: 785286
