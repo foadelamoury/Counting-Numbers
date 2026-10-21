@@ -17,7 +17,6 @@ public class NumbersSpawner : MonoBehaviour
 
     private void SpawnNumber()
     {
-        if (numbersToSpawn == null || numbersToSpawn.Length == 0) return;
 
         NumbersSO randomNumSO = numbersToSpawn[Random.Range(0, numbersToSpawn.Length)];
         if (randomNumSO != null && randomNumSO.numberGO != null)

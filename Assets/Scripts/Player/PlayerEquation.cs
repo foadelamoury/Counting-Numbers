@@ -2,8 +2,18 @@ using UnityEngine;
 using TMPro;
 using System;
 
+public enum NumberState
+{
+    biggerThanTarget,
+    smallerThanTarget,
+    negative
+
+}
 public class PlayerEquation : MonoBehaviour
 {
+   
+    public static PlayerEquation Instance { get; private set; }
+
     [Header("UI Elements")]
     public TMP_Text equationText;
     public TMP_Text targetAnswerText;
@@ -16,44 +26,41 @@ public class PlayerEquation : MonoBehaviour
 
     private string leftOperand = "";
     private string rightOperand = "";
-    private string pendingOp = "";
+    private MathOperation? pendingOp = null;
 
-    public Action<bool> OncurrentResultUpdated; // Event to notify when the current result is more or less than the target answer
+    public Action<NumberState> OncurrentResultUpdated;
 
-    private void Start()
+    private void Awake()
     {
-        GenerateNewTarget();
+        if (Instance != null && Instance != this) { Destroy(gameObject); }
+        else { Instance = this; }
     }
+
+    private void Start() => GenerateNewTarget();
 
     private void GenerateNewTarget()
     {
         targetAnswer = UnityEngine.Random.Range(minRandomAnswer, maxRandomAnswer + 1);
-        ClearEquation();
-        UpdateUI();
-    }
-
-    private void ClearEquation()
-    {
         leftOperand = "";
         rightOperand = "";
-        pendingOp = "";
+        pendingOp = null;
+        UpdateUI();
     }
 
     public void CollectNumber(NumbersSO numberSO)
     {
         string numStr = numberSO.Number.ToString();
 
-        if (string.IsNullOrEmpty(pendingOp))
+        if (pendingOp == null)
         {
             leftOperand += numStr;
         }
         else
         {
-            // Prevent divide by zero if rightOperand is empty and we collect '0'
-            if (pendingOp == "/" && string.IsNullOrEmpty(rightOperand) && numStr == "0")
+            if (pendingOp == MathOperation.Divide && rightOperand == "" && numStr == "0")
             {
                 Debug.Log("Ignored a 0 during division.");
-                return; 
+                return;
             }
             rightOperand += numStr;
         }
@@ -64,50 +71,53 @@ public class PlayerEquation : MonoBehaviour
 
     public void CollectSymbol(SymbolSO symbolSO)
     {
-        string op = NormalizeOperator(symbolSO.operation);
+        if (leftOperand == "") return;
 
-        // If we haven't collected any numbers yet, ignore the symbol
-        if (string.IsNullOrEmpty(leftOperand))
-            return;
-
-        // If we already have a full equation (left OP right), evaluate it first!
-        if (!string.IsNullOrEmpty(rightOperand))
+        // If we already have a full equation, evaluate it first
+        if (rightOperand != "" && pendingOp.HasValue)
         {
-            int result = EvaluateTwoNumbers(leftOperand, rightOperand, pendingOp);
-            leftOperand = result.ToString();
+            leftOperand = Evaluate(leftOperand, rightOperand, pendingOp.Value).ToString();
             rightOperand = "";
         }
 
-        // Set the new pending operation
-        pendingOp = op;
-
+        pendingOp = symbolSO.operation;
         UpdateUI();
         CheckWinCondition();
     }
 
-    private string NormalizeOperator(string op)
-    {
-        op = op.ToLower().Trim();
-        if (op == "+" || op.Contains("add")) return "+";
-        if (op == "-" || op.Contains("sub")) return "-";
-        if (op == "*" || op.Contains("mul") || op == "x") return "*";
-        if (op == "/" || op.Contains("div")) return "/";
-        return op; 
-    }
-
-    private int EvaluateTwoNumbers(string leftStr, string rightStr, string operation)
+    private int Evaluate(string leftStr, string rightStr, MathOperation op)
     {
         int left = int.Parse(leftStr);
         int right = int.Parse(rightStr);
 
-        switch (operation)
+        switch (op)
         {
-            case "+": return left + right;
-            case "-": return left - right;
-            case "*": return left * right;
-            case "/": return right != 0 ? left / right : 0;
+            case MathOperation.Add:      return left + right;
+            case MathOperation.Subtract: return left - right;
+            case MathOperation.Multiply: return left * right;
+            case MathOperation.Divide:   return right != 0 ? left / right : 0;
             default: return right;
         }
+    }
+
+    private string OpToString(MathOperation op)
+    {
+        switch (op)
+        {
+            case MathOperation.Add:      return "+";
+            case MathOperation.Subtract: return "-";
+            case MathOperation.Multiply: return "*";
+            case MathOperation.Divide:   return "/";
+            default: return "";
+        }
+    }
+
+    private int GetLiveResult()
+    {
+        if (leftOperand == "") return 0;
+        if (rightOperand != "" && pendingOp.HasValue)
+            return Evaluate(leftOperand, rightOperand, pendingOp.Value);
+        return int.Parse(leftOperand);
     }
 
     private void UpdateUI()
@@ -116,58 +126,36 @@ public class PlayerEquation : MonoBehaviour
             targetAnswerText.text = "Target: " + targetAnswer;
 
         string eq = leftOperand;
-        if (!string.IsNullOrEmpty(pendingOp)) eq += " " + pendingOp;
-        if (!string.IsNullOrEmpty(rightOperand)) eq += " " + rightOperand;
+        if (pendingOp.HasValue) eq += " " + OpToString(pendingOp.Value);
+        if (rightOperand != "") eq += " " + rightOperand;
 
         if (equationText != null)
             equationText.text = "Equation:\n" + eq;
 
-        // Calculate live result for display
-        int liveResult = 0;
-        if (!string.IsNullOrEmpty(leftOperand))
-        {
-            if (!string.IsNullOrEmpty(rightOperand) && !string.IsNullOrEmpty(pendingOp))
-            {
-                liveResult = EvaluateTwoNumbers(leftOperand, rightOperand, pendingOp);
-            }
-            else
-            {
-                liveResult = int.Parse(leftOperand);
-            }
-        }
-
         if (currentResultText != null)
-            currentResultText.text = "Result: " + liveResult;
+            currentResultText.text = "Result: " + GetLiveResult();
     }
 
     private void CheckWinCondition()
     {
-        // Calculate live result
-        int liveResult = 0;
-        if (!string.IsNullOrEmpty(leftOperand))
-        {
-            if (!string.IsNullOrEmpty(rightOperand) && !string.IsNullOrEmpty(pendingOp))
-            {
-                liveResult = EvaluateTwoNumbers(leftOperand, rightOperand, pendingOp);
-            }
-            else
-            {
-                liveResult = int.Parse(leftOperand);
-            }
-        }
+        int liveResult = GetLiveResult();
 
         if (liveResult == targetAnswer)
         {
             Debug.Log("Target Reached! Generating new target.");
-            GenerateNewTarget(); // This also clears the equation!
-        }
-        else if (liveResult > targetAnswer)
-        {
-            OncurrentResultUpdated?.Invoke(true); // Notify that current result is greater
+            GenerateNewTarget();
         }
         else
         {
-            OncurrentResultUpdated?.Invoke(false); // Notify that current result is less
+            NumberState state;
+            if (liveResult < 0)
+                state = NumberState.negative;
+            else if (liveResult > targetAnswer)
+                state = NumberState.biggerThanTarget;
+            else
+                state = NumberState.smallerThanTarget;
+
+            OncurrentResultUpdated?.Invoke(state);
         }
     }
 }

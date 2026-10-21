@@ -14,20 +14,21 @@ public class SymbolsSpawner : MonoBehaviour
     public float spawnInterval = 2.5f; // Symbols spawn a bit slower
     public float spawnWidth = 8f;
 
-    private bool resultBiggerThan;
 
     public PlayerEquation playerEquation;
 
+    private NumberState state;
+
     void Awake()
     {
-       playerEquation.OncurrentResultUpdated += CheckCurrentResult;
+        playerEquation.OncurrentResultUpdated += CheckCurrentResult;
     }
-    
 
-    private void CheckCurrentResult(bool isGreater)
+
+    private void CheckCurrentResult(NumberState state)
     {
-        resultBiggerThan = isGreater;
-        Debug.Log("Current result is " + (resultBiggerThan ? "greater" : "less") + " than the target answer.");
+
+        this.state = state;
     }
 
     private void Start()
@@ -37,27 +38,35 @@ public class SymbolsSpawner : MonoBehaviour
 
     private void SpawnSymbol()
     {
-SymbolSO randomSymSO;
+        SymbolSO randomSymSO;
 
-        if(resultBiggerThan)
+        if (state == NumberState.biggerThanTarget)
         {
-             randomSymSO = ReductiveSymbolsToSpawn[Random.Range(0, ReductiveSymbolsToSpawn.Length)];
+            randomSymSO = ReductiveSymbolsToSpawn[Random.Range(0, ReductiveSymbolsToSpawn.Length)];
+        }
+        else if (state == NumberState.smallerThanTarget)
+        {
+            randomSymSO = constructiveSymbolsToSpawn[Random.Range(0, constructiveSymbolsToSpawn.Length)];
+        }
+        else if (state == NumberState.negative)
+        {
+            randomSymSO = constructiveSymbolsToSpawn[0];
         }
         else
         {
-            randomSymSO = constructiveSymbolsToSpawn[Random.Range(0, constructiveSymbolsToSpawn.Length)];
+            // If the state is equal to the target, do not spawn any symbols
+            return;
         }
 
         if (randomSymSO != null && randomSymSO.symbolGO != null)
         {
             Vector3 spawnPosition = new Vector3(
-                transform.position.x + Random.Range(-spawnWidth, spawnWidth), 
-                transform.position.y, 
+                transform.position.x + Random.Range(-spawnWidth, spawnWidth),
+                transform.position.y,
                 transform.position.z
             );
 
             GameObject clone = Instantiate(randomSymSO.symbolGO, spawnPosition, Quaternion.identity);
-            // Destroys the clone automatically after 7 seconds
             Destroy(clone, 7f);
         }
     }

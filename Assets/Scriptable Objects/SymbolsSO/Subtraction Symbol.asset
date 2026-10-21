@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Subtraction Symbol
   m_EditorClassIdentifier: Assembly-CSharp::SymbolSO
   Name: Subtraction
-  operation: Subtract
+  operation: 1
   symbolGO: {fileID: 8521606333143535253, guid: b48d1169df4f8d246981419af6355253, type: 3}

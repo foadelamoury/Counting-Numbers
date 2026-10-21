@@ -42,6 +42,10 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: TVNumbers
+    uniqueID: 1319257019
+    locked: 0
   m_RenderingLayers:
   - Default
+  - TVNumbers
   m_MigratedRenderPipelines: []

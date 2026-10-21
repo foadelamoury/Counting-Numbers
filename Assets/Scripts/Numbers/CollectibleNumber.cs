@@ -17,11 +17,13 @@ public class CollectibleNumber : MonoBehaviour
 
     private void CheckAndCollect(Collider2D col)
     {
-        PlayerEquation equation = col.GetComponentInParent<PlayerEquation>();
-        if (equation != null)
+        if (col.CompareTag("Player"))
         {
-            equation.CollectNumber(numberData);
-            Destroy(gameObject); 
+            if (PlayerEquation.Instance != null)
+            {
+                PlayerEquation.Instance.CollectNumber(numberData);
+                Destroy(gameObject); 
+            }
         }
     }
 }

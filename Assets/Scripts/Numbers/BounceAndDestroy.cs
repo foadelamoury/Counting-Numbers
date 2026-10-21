@@ -6,7 +6,6 @@ public class BounceAndDestroy : MonoBehaviour
 
     
 
-
     void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();

@@ -17,12 +17,13 @@ public class CollectibleSymbol : MonoBehaviour
 
     private void CheckAndCollect(Collider2D col)
     {
-        // Use GetComponentInParent because the player's colliders might be on child objects!
-        PlayerEquation equation = col.GetComponentInParent<PlayerEquation>();
-        if (equation != null)
+        if (col.CompareTag("Player"))
         {
-            equation.CollectSymbol(symbolData);
-            Destroy(gameObject); 
+            if (PlayerEquation.Instance != null)
+            {
+                PlayerEquation.Instance.CollectSymbol(symbolData);
+                Destroy(gameObject); 
+            }
         }
     }
 }

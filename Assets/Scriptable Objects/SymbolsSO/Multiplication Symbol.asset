@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Multiplication Symbol
   m_EditorClassIdentifier: Assembly-CSharp::SymbolSO
   Name: Multiplication
-  operation: Multiply
+  operation: 2
   symbolGO: {fileID: 7650592310056412218, guid: 83bc064190f1d3643bf8cf36d78330b9, type: 3}

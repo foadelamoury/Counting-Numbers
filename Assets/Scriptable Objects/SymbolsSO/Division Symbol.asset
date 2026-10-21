@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Division Symbol
   m_EditorClassIdentifier: Assembly-CSharp::SymbolSO
   Name: Division
-  operation: Divide
+  operation: 3
   symbolGO: {fileID: 2612914553277071929, guid: d8f6d0a6c977c914984f87bc4b1b9636, type: 3}
